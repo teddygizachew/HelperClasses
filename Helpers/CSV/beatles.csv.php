@@ -3,3 +3,8 @@ GOOG,"Google Inc.",800
 AAPL,"Apple Inc.",500
 AMZN,"Amazon.com Inc.",250
 YHOO,"Yahoo! Inc.",250
+Symbol,Company,Price
+GOOG,"Google Inc.",800
+AAPL,"Apple Inc.",500
+AMZN,"Amazon.com Inc.",250
+YHOO,"Yahoo! Inc.",250
