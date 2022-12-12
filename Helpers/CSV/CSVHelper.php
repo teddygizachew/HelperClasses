@@ -44,15 +44,19 @@ class CSVHelper
         die('Cannot open the file ' . $filename);
       }
 
+      $data = array();
       // read each line in CSV file at a time
-      while (($row = fgetcsv($fh)) !== false) {
-        $data[] = $row;
+      while ($row = fgets($fh)) {
+        array_push($data, trim($row));
       }
 
       // close the file
       fclose($fh);
+      return $data;
+    } else {
+      echo "File Not found!";
     }
-    return $data;
+    return null;
   }
 
   static function modify($filename, $index, $data)
@@ -60,11 +64,7 @@ class CSVHelper
     if (file_exists($filename)) {
       $fh = fopen($filename, 'r');
 
-      $line_array = array();
-      while ($line = fgets($fh)) {
-        array_push($line_array, (trim($line)));
-      }
-      fclose($fh);
+      $line_array = CSVHelper::read($filename);
 
       $line_counter = 0;
       $new_file_content = '';
