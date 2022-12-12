@@ -18,7 +18,7 @@ class Entity
 
   static function updateEntity($filename, $entityName, $entityValue, $entityID)
   {
-    $entity = [[$entityName, $entityValue]];
+    $entity = [$entityName, $entityValue];
     CSVHelper::modify($filename, $entityID - 1, $entity);
   }
 

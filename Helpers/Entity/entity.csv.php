@@ -1,3 +1,2 @@
-teddy, 123
-Array
-Array
+test, CSC
+all, DSC
