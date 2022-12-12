@@ -1,0 +1,24 @@
+body {
+	padding-left: 5%;
+}
+
+.top-header {
+	padding-left: 0%;
+	padding-top: 40px;
+	text-align: center;
+}
+
+
+.sub-header {
+	padding-left: 0%;
+	padding-top: 40px;
+}
+
+.home-page-link {
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.link-tag {
+	text-decoration: none;
+}
