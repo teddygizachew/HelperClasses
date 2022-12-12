@@ -6,16 +6,22 @@
  */
 class CSVHelper
 {
-  private static $obfuscator = '<?php die() ?>';
-
-  static function write($filename, $data)
+  static function write($filename, $data, $overwrite = false)
   {
     if (!isset($data)) return false;
-    // open csv file for writing
-    $fh = fopen($filename, 'w');
 
-    if ($fh === false) {
-      die('Error opening the file ' . $filename);
+    if (!$overwrite) {
+      // open csv file for append
+      $fh = fopen($filename, 'a');
+      if ($fh === false) {
+        die('Error opening the file ' . $filename);
+      }
+    } else {
+      // open csv file for writing
+      $fh = fopen($filename, 'w');
+      if ($fh === false) {
+        die('Error opening the file ' . $filename);
+      }
     }
     // write each row at a time to a file
     foreach ($data as $row) {
@@ -101,7 +107,7 @@ class CSVHelper
       fclose($fh);
 
       file_put_contents($filename, $new_file_content);
-      echo 'You\'ve successfully deleted the quote';
+      echo 'You\'ve successfully deleted the item';
     }
     return null;
   }
